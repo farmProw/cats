@@ -5,11 +5,9 @@ import { Observable, Subject, EMPTY } from 'rxjs';
 import {
   catchError,
   map,
-  mergeMap,
   retry,
   startWith,
   takeUntil,
-  tap,
 } from 'rxjs/operators';
 import { ICatFilterOptions } from 'src/app/types/cat-filter-options.interface';
 import { ChooseRequestEnum } from 'src/app/enums/choose-request.enum';
@@ -147,7 +145,6 @@ export class CatSearchComponent implements OnInit, OnDestroy {
   }
 
   displayFn(breed: any): string {
-    console.log(breed)
     return breed ? breed : '';
   }
 

@@ -9,7 +9,6 @@ defineComponents(IgcRatingComponent);
   selector: 'app-cat-descriptions-card',
   templateUrl: './cat-descriptions-card.component.html',
   styleUrls: ['./cat-descriptions-card.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatDescriptionsCardComponent implements OnInit, AfterViewInit {
   @Input() catCards: any;

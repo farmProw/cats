@@ -3,7 +3,6 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
-  HttpHeaders,
 } from '@angular/common/http';
 import { CatApiService } from '../services/cat-api.service';
 import { finalize } from 'rxjs';
