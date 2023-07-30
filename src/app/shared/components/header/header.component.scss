@@ -1,0 +1,23 @@
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 60px;
+   background-image: linear-gradient(to right, #4772ff, #f0f08c);
+   z-index: 999;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+   color: #fff;
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: bold;
+}

@@ -1,0 +1,5 @@
+<div  class="wrapper cart-gallery__wrapper">
+<ng-container  *ngFor="let catCard of catCards" >
+  <app-cat-photo-card (onCardBtnClick)="onCardBtnClick.emit($event)" [catCard]="catCard"></app-cat-photo-card>
+</ng-container>
+</div>

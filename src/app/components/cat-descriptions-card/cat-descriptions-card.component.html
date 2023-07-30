@@ -1,0 +1,83 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ catCards[0].breeds[0].name }}</mat-card-title>
+  </mat-card-header>
+  <div class="image-container">
+    <div *ngFor="let card of catCards" class="image-item">
+      <img [src]="card.url" alt="cat" />
+    </div>
+  </div>
+  <mat-card-content>
+    <ul class="list" *ngIf="catCards[0].breeds[0] as catCard">
+      <li class="list_item">
+        <h2>Temperament</h2>
+        <span>{{ catCard.temperament }}</span>
+      </li>
+      <li class="list_item">
+        <h2>Origin</h2>
+        <span>{{ catCard.origin }}</span>
+      </li>
+      <li class="list_item">
+        <h2>Description</h2>
+        <span>{{ catCard.description }}</span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Affection Level</h2>
+        <app-star-rating
+          [rating]="catCard.affection_level"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Child Friendly</h2>
+        <app-star-rating
+          [rating]="catCard.child_friendly"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Intelligence</h2>
+        <app-star-rating
+          [rating]="catCard.intelligence"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Shedding Level</h2>
+        <app-star-rating
+          [rating]="catCard.shedding_level"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Social Needs</h2>
+        <app-star-rating
+          [rating]="catCard.social_needs"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Stranger Friendly</h2>
+        <app-star-rating
+          [rating]="catCard.stranger_friendly"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+      <li class="list_item">
+        <h2 class="stars">Vocalisation</h2>
+        <app-star-rating
+          [rating]="catCard.vocalisation"
+          [starCount]="starCount"
+        ></app-star-rating
+        ><span></span>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+

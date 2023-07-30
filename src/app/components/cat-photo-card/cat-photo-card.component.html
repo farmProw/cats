@@ -1,0 +1,13 @@
+<mat-card  class="cat-card">
+  <mat-card-header>
+    <mat-card-title>{{ $any(catCard.breeds[0])?.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="catCard.url" alt="cat" class="cat-image" />
+  <mat-card-content>
+	<p class="description">{{  $any(catCard.breeds[0])?.description }}</p>
+  </mat-card-content>
+    <mat-card-actions>
+    <button (click) = "onCardBtnClick.emit( $any(catCard.breeds[0])?.id)" mat-button>MORE EXAMPLE</button>
+  </mat-card-actions>
+</mat-card>
+

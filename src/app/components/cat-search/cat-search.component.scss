@@ -1,0 +1,27 @@
+.search-form {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   column-gap: 1rem;
+
+   @media (max-width:768px) {
+      flex-direction: column;
+   }
+}
+
+mat-form-field {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   position: relative;
+}
+
+.reset-icon {
+   position: absolute;
+   right: 0rem;
+   background-color: transparent;
+   border-radius: 50%;
+   color: rgba(0, 0, 0, 0.6);
+   border: none;
+   outline: none;
+}

@@ -1,0 +1,34 @@
+<form [formGroup]="searchForm" class="search-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Breed</mat-label>
+    <button
+    (click)="resetBreeds()"
+      *ngIf="this.searchForm.controls['breedInput'].value"
+      class="reset-icon"
+    >
+      <mat-icon>clear</mat-icon>
+    </button>
+    <input matInput [matAutocomplete]="auto" formControlName="breedInput" />
+    <mat-autocomplete [displayWith]="displayFn" #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let breed of filteredOptions$ | async"
+        [value]="breed.id"
+      >
+        {{ breed.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Count</mat-label>
+    <mat-select formControlName="limit">
+      <mat-option value="10">10</mat-option>
+      <mat-option value="25">25</mat-option>
+      <mat-option value="50">50</mat-option>
+      <mat-option value="100">All</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
+</form>
+<small>Number of results:{{ catImages.length }}</small>
+<app-cat-gallery *ngIf="componentToggler" (onCardBtnClick)="onCardBtnClick($event)" [catCards]="catImages"></app-cat-gallery>
+<app-cat-descriptions-card *ngIf="!componentToggler" [catCards]="catImages"></app-cat-descriptions-card>
